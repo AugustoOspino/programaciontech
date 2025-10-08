@@ -1,0 +1,220 @@
+
+  /* 🎯 Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #dbeef3; /* Pastel azul */
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* 🎨 Encabezados */
+h1 {
+  color: #355c7d;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #6c5b7b;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* 📷 Imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🧾 Formularios */
+form {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  background-color: #8ecae6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #219ebc;
+}
+
+/* 📄 Enlaces */
+a {
+  color: #219ebc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 🦶 Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ========== 🌐 NAVBAR + HEADER RESPONSIVO ========== */
+
+nav {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  margin: 20px auto;
+  padding: 15px 30px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Contenedor flex para logo + botón + enlaces */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #023047;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #023047;
+}
+
+/* Lista de enlaces */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #023047;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.4);
+  color: #219ebc;
+}
+
+/* 📱 RESPONSIVE para pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 15px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  nav {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 0;
+  }
+}
+
+/* 📱 Otros ajustes responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
