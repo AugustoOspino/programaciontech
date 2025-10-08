@@ -6,16 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina web</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+  // Cargar el header
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    })
+    .catch(error => console.error("Error cargando header:", error));
+
+  // Cargar el footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(error => console.error("Error cargando footer:", error));
+</script>
 </head>
-<nav>
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="about.html">Acerca de</a></li>
-        <li><a href="services.html">Servicios</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-    </ul>
-</nav>
+<div id="header"></div>
 <body>
+    
     <h1>"Este es el titulo de mi primera pagina"</h1>
     <p>Esto es un parrafo ...Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia voluptatum iste corrupti
         eligendi aperiam?
@@ -67,8 +78,6 @@
 
 
 </body>
-<footer>
-
-</footer>
+<div id="footer"></div>
 
 </html>
