@@ -2,23 +2,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
 </head>
 
 <body>
-    <div id="header"></div>
+  <div id="header"></div>
 
 
-    <p>Contacto </p>
+  <h2>Contactame</h2>
+
+  <form action="/confir.html" target="_blank">
+    <div class="form-grid">
+      <!-- Nombre -->
+      <div>
+        <label for="fname">Nombre:</label>
+        <input type="text" id="fname" name="fname" placeholder="Jhon" />
+      </div>
+
+      <!-- Apellidos -->
+      <div>
+        <label for="lname">Apellidos:</label>
+        <input type="text" id="lname" name="lname" placeholder="Doe" />
+      </div>
+
+      <!-- Teléfono -->
+      <div>
+        <label for="phone">Teléfono:</label>
+        <input type="number" id="phone" name="phone" placeholder="+57 123 456 789" />
+      </div>
+
+      <!-- Correo electrónico -->
+      <div>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="correo@email.com" />
+      </div>
+
+      <!-- Mensaje -->
+      <div class="full-width">
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." rows="4" cols="40"></textarea>
+      </div>
+
+      <!-- Intereses -->
+      <div class="full-width">
+        <fieldset>
+          <label>Interesado en:</label><br>
+          <div class="checkbox-grid">
+            <label><input type="checkbox" name="interested[]" value="Soporte TI"> Soporte TI</label>
+            <label><input type="checkbox" name="interested[]" value="Soporte CCTV"> Soporte CCTV</label>
+            <label><input type="checkbox" name="interested[]" value="Desarrollo Web"> Desarrollo Web</label>
+            <label><input type="checkbox" name="interested[]" value="Página de Ventas"> Página de Ventas</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Botón -->
+      <div class="full-width" style="text-align: center;">
+        <input type="submit" onclick="alert('Formulario enviado con éxito')" value="Enviar" />
+      </div>
+
+    </div>
+
+  </form>
 
 
-    <div id="footer"></div>
 
-<!-- Scripts -->
+
+  <div id="footer"></div>
+  <video autoplay muted loop playsinline id="videoFondo">
+    <source src="assets/Img/videoplayback.webm" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+  <!-- Scripts -->
   <script src="js/load-components.js"></script>
   <script src="js/navbar-toggle.js"></script>
 </body>

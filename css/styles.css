@@ -1,5 +1,4 @@
-
-  /* 🎯 Reset básico */
+/* 🎯 Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -8,30 +7,48 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #dbeef3; /* Pastel azul */
   color: #333;
   line-height: 1.6;
   padding: 20px;
+  margin-top: 100px;
+  /* ajusta según el alto del nav */
+}
+
+#videoFondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+  /* Puedes ajustar la visibilidad del video */
+  pointer-events: none;
+  /* Para que no interfiera con clics */
 }
 
 /* 🎨 Encabezados */
 h1 {
-  color: #355c7d;
+  color: #ffffff;
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
 h2 {
-  color: #6c5b7b;
+  color: #ffffff;
   margin-top: 40px;
   margin-bottom: 15px;
   font-size: 1.8rem;
+  text-align: center;
 }
 
 p {
   margin-bottom: 20px;
   font-size: 1.1rem;
+  text-align: center;
+  color: #ffffff;
 }
 
 /* 📷 Imágenes */
@@ -46,7 +63,9 @@ img {
 
 /* 🧾 Formularios */
 form {
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -54,15 +73,35 @@ form {
   margin: 0 auto 40px auto;
 }
 
+/* ========== 🌐 NAVBAR + HEADER RESPONSIVO ========== */
+
+nav {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  z-index: 1000;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px 16px 16px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  padding: 15px 30px;
+}
+
 label {
   font-weight: 600;
   display: block;
   margin-bottom: 5px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="email"],
+textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -71,14 +110,24 @@ input[type="number"] {
   font-size: 1rem;
 }
 
-input[type="radio"] {
-  margin-right: 8px;
-  margin-top: 10px;
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
+input[type="checkbox"] {
+  accent-color: #4a90e2;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+
+
 input[type="submit"] {
-  background-color: #8ecae6;
-  color: white;
+  background-color: #2ab31e;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 12px 20px;
   font-size: 1rem;
@@ -106,24 +155,11 @@ a:hover {
 footer {
   text-align: center;
   padding: 20px;
-  color: #888;
+  color: #000000;
   font-size: 0.9rem;
 }
 
-/* ========== 🌐 NAVBAR + HEADER RESPONSIVO ========== */
 
-nav {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
-  margin: 20px auto;
-  padding: 15px 30px;
-  position: relative;
-  z-index: 10;
-}
 
 /* Contenedor flex para logo + botón + enlaces */
 .nav-container {
@@ -137,7 +173,7 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #023047;
+  color: #fdfdfd;
 }
 
 /* Botón hamburguesa */
@@ -147,7 +183,7 @@ nav {
   background: none;
   border: none;
   cursor: pointer;
-  color: #023047;
+  color: #053046;
 }
 
 /* Lista de enlaces */
@@ -160,7 +196,7 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #023047;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 8px 12px;
@@ -170,8 +206,40 @@ nav {
 
 .nav-links li a:hover {
   background: rgba(255, 255, 255, 0.4);
-  color: #219ebc;
+  color: #000000;
 }
+
+/* Agrupar campos en dos columnas */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Hacer elementos como mensaje o botón ocupar ambas columnas */
+.full-width {
+  grid-column: span 2;
+}
+
+/* Estilo para los checkboxes en dos columnas */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+
+.checkbox-grid label {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #333;
+}
+
+.checkbox-grid input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #4a90e2;
+}
+
 
 /* 📱 RESPONSIVE para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -195,8 +263,11 @@ nav {
 
   nav {
     width: 100%;
+    margin: 0 auto;
     padding: 10px 20px;
-    border-radius: 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
   }
 }
 
