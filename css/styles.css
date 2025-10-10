@@ -1,34 +1,28 @@
-/* 🎯 Reset básico */
+/* ==================================================
+   🎯 RESET BÁSICO
+   ================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ==================================================
+   🧱 ESTILOS GENERALES
+   ================================================== */
 body {
+  background: rgb(231, 149, 149);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
   padding: 20px;
   margin-top: 100px;
-  /* ajusta según el alto del nav */
+  /* Ajuste para nav fijo */
 }
 
-#videoFondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 1;
-  /* Puedes ajustar la visibilidad del video */
-  pointer-events: none;
-  /* Para que no interfiera con clics */
-}
-
-/* 🎨 Encabezados */
+/* ==================================================
+   🖼️ ENCABEZADOS Y TEXTO
+   ================================================== */
 h1 {
   color: #ffffff;
   font-size: 2.5rem;
@@ -38,10 +32,20 @@ h1 {
 
 h2 {
   color: #ffffff;
-  margin-top: 40px;
-  margin-bottom: 15px;
+  margin: 40px 0 15px;
   font-size: 1.8rem;
   text-align: center;
+}
+
+h5 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  /* Color del texto */
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 2rem
 }
 
 p {
@@ -51,7 +55,9 @@ p {
   color: #ffffff;
 }
 
-/* 📷 Imágenes */
+/* ==================================================
+   🖼️ IMÁGENES GENERALES
+   ================================================== */
 img {
   max-width: 100%;
   height: auto;
@@ -61,20 +67,70 @@ img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 🧾 Formularios */
-form {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 0 auto 40px auto;
+/* ==================================================
+   📹 VIDEO DE FONDO
+   ================================================== */
+#videoFondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
 }
 
-/* ========== 🌐 NAVBAR + HEADER RESPONSIVO ========== */
+/* ==================================================
+   🛍️ CARRUSEL DE PRODUCTOS
+   ================================================== */
+.product-carousel {
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
 
+.product-carousel::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+  min-height: 100%; /* para que todas tengan altura igual */
+}
+
+.product-card .list-group-item {
+  background-color: #e2e2e2;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+
+/* ==================================================
+   🌐 NAVEGACIÓN (NAVBAR)
+   ================================================== */
 nav {
   position: fixed;
   top: 15px;
@@ -84,140 +140,13 @@ nav {
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px 16px 16px 16px;
+  border-radius: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
   padding: 15px 30px;
 }
 
-label {
-  font-weight: 600;
-  display: block;
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
-input[type="checkbox"] {
-  accent-color: #4a90e2;
-  width: 18px;
-  height: 18px;
-  margin-right: 8px;
-}
-
-
-
-input[type="submit"] {
-  background-color: #2ab31e;
-  color: rgb(0, 0, 0);
-  border: none;
-  padding: 12px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-input[type="submit"]:hover {
-  background-color: #219ebc;
-}
-
-/* 📄 Enlaces */
-a {
-  color: #219ebc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* 🦶 Footer */
-.footer {
-  
-  padding: 30px 0px;
-  font-family: 'Play', sans-serif;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
-  margin: auto;
-}
-
-.footer .row {
-  width: 100%;
-  margin: 1% 0%;
-  padding: 0.6% 0%;
-  color: gray;
-  font-size: 0.8em;
-}
-
-.footer .row a {
-  text-decoration: none;
-  color: gray;
-  transition: 0.5s;
-}
-
-.footer .row a:hover {
-  color: #fff;
-}
-
-.footer .row ul {
-  width: 100%;
-}
-
-.footer .row ul li {
-  display: inline-block;
-  margin: 0px 30px;
-}
-
-.footer .row a i {
-  font-size: 2em;
-  margin: 0% 1%;
-}
-
-@media (max-width:720px) {
-  .footer {
-    text-align: left;
-    padding: 5%;
-  }
-
-  .footer .row ul li {
-    display: block;
-    margin: 10px 0px;
-    text-align: left;
-  }
-
-  .footer .row a i {
-    margin: 0% 3%;
-  }
-}
-
-
-/* Contenedor flex para logo + botón + enlaces */
+/* Contenedor nav: logo + toggle + links */
 .nav-container {
   display: flex;
   align-items: center;
@@ -242,7 +171,7 @@ a:hover {
   color: #053046;
 }
 
-/* Lista de enlaces */
+/* Lista de navegación */
 .nav-links {
   list-style: none;
   display: flex;
@@ -265,19 +194,71 @@ a:hover {
   color: #000000;
 }
 
-/* Agrupar campos en dos columnas */
+/* ==================================================
+   🧾 FORMULARIOS
+   ================================================== */
+form {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin: 5px 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  accent-color: #4a90e2;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+input[type="submit"] {
+  background-color: #2ab31e;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #219ebc;
+}
+
+/* Agrupación de inputs en columnas */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-/* Hacer elementos como mensaje o botón ocupar ambas columnas */
 .full-width {
   grid-column: span 2;
 }
 
-/* Estilo para los checkboxes en dos columnas */
+/* Checkboxes en dos columnas */
 .checkbox-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -291,13 +272,72 @@ a:hover {
   color: #333;
 }
 
-.checkbox-grid input[type="checkbox"] {
-  margin-right: 8px;
-  accent-color: #4a90e2;
+/* ==================================================
+   📄 ENLACES GENERALES
+   ================================================== */
+a {
+  color: #219ebc;
+  text-decoration: none;
+  font-weight: bold;
 }
 
+a:hover {
+  text-decoration: underline;
+}
 
-/* 📱 RESPONSIVE para pantallas pequeñas */
+/* ==================================================
+   🦶 FOOTER
+   ================================================== */
+.footer {
+  padding: 25px;
+  font-family: 'Play', sans-serif;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: auto;
+}
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0;
+  padding: 0.6% 0;
+  color: gray;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .row a {
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0 1%;
+}
+
+/* ==================================================
+   📱 RESPONSIVE
+   ================================================== */
+
+/* Menú responsive */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -322,12 +362,48 @@ a:hover {
     margin: 0 auto;
     padding: 10px 20px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
   }
 }
 
-/* 📱 Otros ajustes responsive */
+/* Ajustar carrusel para pantallas pequeñas */
+@media (max-width: 768px) {
+  .product-carousel {
+    white-space: normal;
+    overflow-x: visible;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .product-card {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    /* ancho máximo reducido para móviles */
+    margin: 0 auto 1rem auto;
+  }
+}
+
+
+/* Footer y texto responsivo */
+@media (max-width: 720px) {
+  .footer {
+    text-align: left;
+    padding: 5%;
+  }
+
+  .footer .row ul li {
+    display: block;
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  .footer .row a i {
+    margin: 0 3%;
+  }
+}
+
 @media (max-width: 600px) {
   body {
     padding: 15px;
