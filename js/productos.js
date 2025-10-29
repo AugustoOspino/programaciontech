@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       titulo: "Producto 4",
       producttop: true,
-      descripcion: "Descripción del producto 4.",
+      descripcion: "Descripción del producto 4 es ma larga y por eso necesitamos que sea asi .",
       material: "Metal",
       tamano: "Grande",
       precio: "$70",
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       titulo: "Producto 6",
-      producttop: false,
+      producttop: true,
       descripcion: "Descripción del producto 6.",
       material: "Metal",
       tamano: "Grande",
@@ -75,37 +75,95 @@ document.addEventListener("DOMContentLoaded", () => {
       imagen: "/assets/img/products/producto1.png",
       enlace: "#"
     },
+    {
+      titulo: "Producto 8",
+      producttop: true,
+      descripcion: "Descripción del producto 8.",
+      material: "Hierro",
+      tamano: "Grande",
+      precio: "$200",
+      imagen: "/assets/img/products/producto1.png",
+      enlace: "#"
+    },
+    {
+      titulo: "Producto 9",
+      producttop: true,
+      descripcion: "Descripción del producto 9.",
+      material: "Metal",
+      tamano: "Grande",
+      precio: "$70",
+      imagen: "/assets/img/products/producto1.png",
+      enlace: "#"
+    },
+    {
+      titulo: "Producto 10",
+      producttop: true,
+      descripcion: "Descripción del producto 10.",
+      material: "Metal",
+      tamano: "Grande",
+      precio: "$70",
+      imagen: "/assets/img/products/producto1.png",
+      enlace: "#"
+    },
   ];
 
   // ===========================================
-  // 🎯 Renderizar productos destacados (carrusel)
-  // ===========================================
-  const carousel = document.getElementById("product-carousel");
+// 🎯 Renderizar productos destacados (carrusel con tarjetas giratorias)
+// ===========================================
 
-  if (carousel) {
-    const productosDestacados = productos.filter(p => p.producttop);
+const carouselTrack = document.getElementById("product-carousel");
 
-    productosDestacados.forEach(producto => {
-      const card = document.createElement("div");
-      card.className = "card product-card text-white d-inline-block m-2 glass-card";
-      card.style.width = "18rem";
+if (carouselTrack) {
+  const productosDestacados = productos.filter(p => p.producttop);
 
-      card.innerHTML = `
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.titulo}">
-        <div class="card-body">
-          <h5 class="card-title">${producto.titulo}</h5>
-          <p class="card-text">${producto.descripcion}</p>
-          <ul class="list-group list-group-flush text-dark">
-            <li class="list-group-item"><strong>Material:</strong> ${producto.material}</li>
-            <li class="list-group-item"><strong>Tamaño:</strong> ${producto.tamano}</li>
-            <li class="list-group-item"><strong>Precio:</strong> ${producto.precio}</li>
-          </ul>
-          <a href="${producto.enlace}" class="btn btn-primary mt-3">Ver más</a>
+  // Renderiza las tarjetas
+  productosDestacados.forEach(producto => {
+    const card = document.createElement("div");
+    card.className = "flip-card m-2";
+    card.innerHTML = `
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="${producto.imagen}" class="img-fluid rounded-top" alt="${producto.titulo}">
+          <h5 class="text-center mt-2">${producto.titulo}</h5>
         </div>
-      `;
-      carousel.appendChild(card);
+        <div class="flip-card-back">
+          <h5>${producto.titulo}</h5>
+          <p>${producto.descripcion}</p>
+          <ul class="list-unstyled mb-3">
+            <li><strong>Material:</strong> ${producto.material}</li>
+            <li><strong>Tamaño:</strong> ${producto.tamano}</li>
+            <li><strong>Precio:</strong> ${producto.precio}</li>
+          </ul>
+          <a href=" productsdesc.html" class="btn btn-light ">Ver más</a>
+          
+        </div>
+      </div>
+    `;
+    carouselTrack.appendChild(card);
+  });
+
+  // Movimiento automático del carrusel
+  let scrollAmount = 0;
+  const cardWidth = 240; // Ancho estimado de cada tarjeta con márgenes
+  const intervalTime = 4000; // Tiempo entre desplazamientos (4s)
+
+  setInterval(() => {
+    const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+
+    if (scrollAmount >= maxScroll) {
+      scrollAmount = 0;
+    } else {
+      scrollAmount += cardWidth;
+    }
+
+    carouselTrack.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth"
     });
-  }
+  }, intervalTime);
+}
+
+
 
   // ===========================================
   // 📦 Renderizar todos los productos (en grilla)
@@ -122,13 +180,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="${producto.imagen}" class="card-img-top" alt="${producto.titulo}">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">${producto.titulo}</h5>
-            <p class="card-text">${producto.descripcion}</p>
-            <ul class="list-group list-group-flush text-dark mb-3">
-              <li class="list-group-item"><strong>Material:</strong> ${producto.material}</li>
-              <li class="list-group-item"><strong>Tamaño:</strong> ${producto.tamano}</li>
-              <li class="list-group-item"><strong>Precio:</strong> ${producto.precio}</li>
-            </ul>
-            <a href="${producto.enlace}" class="btn btn-primary mt-auto">Ver más</a>
+            
+            <a href="productsdesc.html" class="btn btn-outline-success mt-auto">Ver detalles</a> 
           </div>
         </div>
       `;

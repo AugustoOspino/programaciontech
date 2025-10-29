@@ -11,7 +11,7 @@
    🧱 ESTILOS GENERALES
    ================================================== */
 body {
-  background: rgb(231, 149, 149);
+  background:linear-gradient(#E7CA8F,#B1783E);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
@@ -24,22 +24,22 @@ body {
    🖼️ ENCABEZADOS Y TEXTO
    ================================================== */
 h1 {
-  color: #ffffff;
+  color: #000000;
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
 h2 {
-  color: #ffffff;
+  color: #000000;
   margin: 40px 0 15px;
   font-size: 1.8rem;
   text-align: center;
 }
 
 h5 {
-  color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
+  background-color: rgba(126, 70, 70, 0);
   border-radius: 10px;
   /* Color del texto */
   margin-bottom: 10px;
@@ -52,7 +52,7 @@ p {
   margin-bottom: 20px;
   font-size: 1.1rem;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* ==================================================
@@ -85,6 +85,96 @@ img {
 /* ==================================================
    🛍️ CARRUSEL DE PRODUCTOS
    ================================================== */
+.flip-card {
+  width: 260px;
+  height: 400px;
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+  border-radius: 1rem;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.flip-card-back p {
+  max-height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: normal;
+  /* Permite salto de línea automático */
+  word-wrap: break-word;
+  /* Fuerza ruptura si hay palabras largas */
+  margin-bottom: 0.5rem;
+  padding-right: 5px;
+  /* Espacio para scrollbar si aparece */
+}
+
+
+.flip-card-front img {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+
+/* Opcional: scroll bonito si es necesario */
+.flip-card-back::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flip-card-back::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+
+.flip-card-front {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: rgb(0, 0, 0);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
 .product-carousel {
   overflow-x: auto;
   white-space: nowrap;
@@ -109,6 +199,19 @@ img {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  /* transición suave */
+}
+
+.card-img-top:hover {
+  transform: scale(1.1);
+  /* zoom ligero */
+}
+
+
 .product-card {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -118,12 +221,15 @@ img {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin: 0.5rem;
-  min-height: 100%; /* para que todas tengan altura igual */
+  min-height: 100%;
+  /* para que todas tengan altura igual */
 }
 
 .product-card .list-group-item {
-  background-color: #e2e2e2;
+  background-color: #fac8c800;
   padding: 0.4rem 0.75rem;
+  color: #000000;
+  border: none;
   font-size: 0.9rem;
 }
 
@@ -157,8 +263,8 @@ nav {
 /* Logo */
 .logo {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #fdfdfd;
+  font-family: 'Play', sans-serif;
+  color: #000000;
 }
 
 /* Botón hamburguesa */
@@ -181,7 +287,7 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 8px 12px;
@@ -191,7 +297,7 @@ nav {
 
 .nav-links li a:hover {
   background: rgba(255, 255, 255, 0.4);
-  color: #000000;
+  color: #ffffff;
 }
 
 /* ==================================================
@@ -304,19 +410,19 @@ a:hover {
   width: 100%;
   margin: 1% 0;
   padding: 0.6% 0;
-  color: gray;
+  color: rgb(0, 0, 0);
   font-size: 0.8em;
   display: flex;
   justify-content: center;
 }
 
 .footer .row a {
-  color: gray;
+  color: rgb(0, 0, 0);
   transition: 0.5s;
 }
 
 .footer .row a:hover {
-  color: #fff;
+  color: #747373;
 }
 
 .footer .row ul {
@@ -331,6 +437,18 @@ a:hover {
 .footer .row a i {
   font-size: 2em;
   margin: 0 1%;
+}
+
+.social-icons a {
+  color: #000000;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #747373;
+
 }
 
 /* ==================================================
@@ -377,7 +495,7 @@ a:hover {
   }
 
   .product-card {
-    display: block;
+    display: inline-block;
     width: 100%;
     max-width: 280px;
     /* ancho máximo reducido para móviles */
