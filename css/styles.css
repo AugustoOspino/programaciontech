@@ -11,7 +11,7 @@
    🧱 ESTILOS GENERALES
    ================================================== */
 body {
-  background:linear-gradient(#E7CA8F,#B1783E);
+  background: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
@@ -52,6 +52,7 @@ p {
   margin-bottom: 20px;
   font-size: 1.1rem;
   text-align: center;
+
   color: #000000;
 }
 
@@ -211,6 +212,26 @@ img {
   /* zoom ligero */
 }
 
+.card-body {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-description{
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+}
 
 .product-card {
   background: rgba(255, 255, 255, 0.15);
@@ -232,6 +253,53 @@ img {
   border: none;
   font-size: 0.9rem;
 }
+
+/* ==== Modal Imagen (efecto zoom) ==== */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.image-modal img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.image-modal img:hover {
+  transform: scale(1.05);
+}
+
+/* Botón cerrar */
+.image-modal .close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.image-modal .close:hover {
+  color: #ff5555;
+}
+
+
 
 
 /* ==================================================
@@ -450,6 +518,7 @@ a:hover {
   color: #747373;
 
 }
+
 
 /* ==================================================
    📱 RESPONSIVE

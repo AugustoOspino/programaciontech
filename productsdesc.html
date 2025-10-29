@@ -1,29 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- ✅ Bootstrap 4 (puede actualizarse a v5 si querés) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <title>Detalles del Producto</title>
 
+    <!--Hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Bootstrap 4 para estructura y diseño responsivo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 
 <body>
+
+    <!-- Header cargado dinámicamente con JavaScript -->
     <div id="header"></div>
+    <br>
+    <br>
 
+    <!-- Contenedor principal del detalle del producto -->
+    <main class="container my-5">
+        <!--  Aquí se insertará dinámicamente el producto seleccionado -->
+        <div id="product-detail" class="row justify-content-center"></div>
+        <div id="imageModal" class="image-modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
+    </main>
 
-    <p>Descripcion completa de los productos </p>
-
-
+    <!--  Footer cargado dinámicamente -->
     <div id="footer"></div>
 
+    <!--  Scripts para cargar componentes globales (navbar/footer) -->
     <script src="js/load-components.js"></script>
     <script src="js/navbar-toggle.js"></script>
+
+    <!-- Script específico para mostrar el detalle del producto -->
+    <script src="js/productos.js"></script>
 </body>
 
 </html>
