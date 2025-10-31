@@ -6,16 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página Web | Mundo Digital</title>
   <!-- ✅ Bootstrap 4 (puede actualizarse a v5 si querés) -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- ✅ Estilos personalizados -->
-  <link rel="stylesheet" href="css/styles.css" />   
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">   
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light text-dark">
 
   <!-- 🔝 Header cargado dinámicamente -->
   <div id="header"></div>
@@ -23,44 +21,49 @@
   <!-- 🔽 Contenido principal -->
   <main class="container mt-5 pt-5">
 
-    <!-- ✅ Título principal de la página -->
-    <h1 class="text-center mb-4">Bienvenido a Nuestro Mundo Digital</h1>
+    <!-- ✅ Título principal -->
+    <h1 class="text-center mb-4 display-5 fw-bold text-primary">Bienvenido a Tu-Chin</h1>
 
-    <!-- ✅ Descripciones -->
-    <section class="mb-5">
-      <p>
-        En un mundo donde la tecnología avanza a pasos agigantados, estamos aquí para ayudarte a mantenerte a la
-        vanguardia. Ofrecemos soluciones modernas, eficientes y personalizadas en áreas clave como soporte TI, sistemas
-        de videovigilancia CCTV, desarrollo web profesional y páginas de ventas optimizadas para hacer crecer tu negocio.
+    <!-- ✅ Descripción -->
+    <section class="mb-5 text-center">
+      <p class="lead">
+        En <b>Tu-Chin</b> celebramos el arte, la cultura y la tradición de nuestras raíces. Cada uno de nuestros productos —
+        <b>sombreros, mochilas, asientos, carteras y sillas artesanales</b> — está elaborado con dedicación, talento y el toque
+        único de nuestros artesanos locales.
       </p>
-      <p>
-        Ya sea que necesites asistencia técnica, proteger tus instalaciones, construir tu presencia online o vender más a
-        través de internet, nuestro equipo está listo para acompañarte en cada paso del camino. Tu transformación digital
-        comienza aquí.
+      <p class="lead">
+        Creemos en mantener viva la esencia de lo hecho a mano, combinando diseño, calidad y autenticidad en cada pieza.
+        Ya sea que busques un detalle especial, decorar tu hogar o llevar contigo una muestra de nuestra cultura, en
+        Tu-Chin encontrarás algo hecho con alma y propósito.
       </p>
+      <p class="fw-semibold fs-5 text-secondary"><b>Tu conexión con lo artesanal comienza aquí.</b></p>
     </section>
 
     <!-- 🛒 Sección de productos -->
     <section class="mb-5">
-      <h2 class="text-center">Top Productos mas vendidos</h2>
+      <h2 class="text-center mb-4 fw-bold text-success">Top Productos Más Vendidos</h2>
       <div id="product-carousel" class="product-carousel"></div>
     </section>
 
-    <!-- 📷 Imagen decorativa (mejor con descripción más útil para accesibilidad) -->
+    <!-- 📷 Imagen decorativa -->
     <section class="text-center mb-5">
-       <!-- Parrafo con descripcion de interes -->
-        <p>Imagen representativa de servicios digitales y tecnología avanzada.</p>
+      <p class="fs-5 mb-3 text-muted">Conoce todos nuestros productos y déjate llevar por la tradición artesanal.</p>
+      <img src="assets/Img/products/Portada.jpg" alt="Productos artesanales Tu-Chin" class="img-fluid rounded shadow" style="max-width: 500px;">
     </section>
 
-    <!-- 🎥 Video de fondo (opcional) -->
-    <!-- 
-    <video autoplay muted loop playsinline id="videoFondo">
-      <source src="assets/Img/videoplayback.webm" type="video/webm">
-      Tu navegador no soporta video HTML5.
-    </video>
-    -->
+    <!-- 🔘 Botón centrado -->
+    <div class="text-center mb-5">
+      <a href="products.html" class="btn btn-primary btn-lg px-5 shadow-sm rounded-pill">
+        Ver Catálogo Completo
+      </a>
+    </div>
 
   </main>
+
+  <!-- 🔻 Footer (opcional si lo cargas dinámicamente) -->
+  <div id="footer"></div>
+
+</body>
 
   <!-- 🔚 Footer cargado dinámicamente -->
   <div id="footer"></div>
@@ -71,16 +74,16 @@
 
   <!-- Bootstrap JS + dependencias -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-          crossorigin="anonymous"></script>
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-          crossorigin="anonymous"></script>
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-          crossorigin="anonymous"></script>
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
   <!-- Scripts de estructura (navbar/footer) -->
   <script src="js/load-components.js"></script>
